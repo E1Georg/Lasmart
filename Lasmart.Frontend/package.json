@@ -1,0 +1,11 @@
+{
+  "name": "lasmart.frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": ""
+  },
+  "author": "E.G.",
+  "license": "ISC"
+}

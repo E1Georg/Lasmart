@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Points&Comments</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="https://unpkg.com/konva@9/konva.min.js"></script>
+	<script src="api/api.js"></script>
+
+	<script src="models/Point/CreatePointDto.js"></script>
+	<script src="models/Point/UpdatePointDto.js"></script>
+	<script src="models/Comment/CreateCommentDto.js"></script>
+	<script src="models/Comment/UpdateCommentDto.js"></script>
+
+	<script src="components/Konva_Points.js"></script>
+	<script src="components/Konva_Comments.js"></script>
+</head>
+
+<body onload="getData()">
+	<div id="container"></div>
+	<div id="desc">
+		<div class="form_container">
+			<form id="pointCreate">
+				<label class="custom-field">Добавить точку:</label></br>	
+				<input type="submit" name="send" value="Добавить">
+			</form>		
+		</div></br>
+		<div class="form_container">	
+			<form id="commentCreate">
+				<label class="custom-field">Добавить комментарий к точке:</label></br>
+				<input type="number" min="1" max="999" name="Номер точки" placeholder="Номер точки"></br>
+				<input type="text" name="Сообщение" placeholder="Сообщение"></br>
+				<label class="title">Выберите цвет фона сообщения:</label></br>
+				<select>
+					<option value="green">Зелёный</option>
+					<option value="blue">Синий</option>
+					<option value="red">Красный</option>
+      				<option value="black">Черный</option>
+      				<option value="yellow">Желтый</option>
+      				<option value="orange">Оранжевый</option>
+      				<option value="gray" selected>Серый</option>
+				</select></br>
+				<input type="submit" name="send" value="Отправить">
+			</form>
+		</div></br>
+		<div class="form_container">
+			<form id="pointUpdate">
+				<label class="custom-field">Редактировать точку:</label></br>			
+				<input type="number" min="1" max="999" name="id" placeholder="Введите номер точки"></br>			
+				<label class="title">Выберите новый цвет точки:</label></br>
+				<select>
+					<option value="green">Зелёный</option>
+					<option value="blue">Синий</option>
+					<option value="red">Красный</option>
+      				<option value="black">Черный</option>
+      				<option value="yellow">Желтый</option>
+      				<option value="orange" selected>Оранжевый</option>
+				</select></br>
+				<label for="volume">Выберите радиус:</label></br>			
+				<input type="range" id="volume" name="volume" min="5" max="50" /></br>			
+				<input type="submit" name="send" value="Сохранить">
+			</form>
+		</div></br>
+
+		<div class="form_container">	
+			<form id="commentUpdate">
+				<label class="custom-field">Редактировать комментарий:</label></br>
+				<input type="number" min="1" max="9999" name="Номер точки" placeholder="Номер комментария"></br>
+				<input type="text" name="Сообщение" placeholder="Сообщение"></br>
+				<label class="title">Выберите цвет фона сообщения:</label></br>
+				<select>
+					<option value="green">Зелёный</option>
+					<option value="blue">Синий</option>
+					<option value="red">Красный</option>
+      				<option value="black">Черный</option>
+      				<option value="yellow">Желтый</option>
+      				<option value="orange" selected>Оранжевый</option>
+				</select></br>
+				<input type="submit" name="send" value="Сохранить">
+			</form>
+		</div>
+	</div>	
+ 
+<script>
+	let tmp = "https://localhost:7029";
+	let myClient = new Client(tmp);	
+
+	var width = window.innerWidth;
+	var height = window.innerHeight;
+
+	var stage = new Konva.Stage({
+	    container: 'container',
+	    width: width,
+	    height: height,
+	    draggable: true,
+	});	
+
+	var pointsLayer = new Konva.Layer();
+	var commentsLayer = new Konva.Layer();
+	stage.add(pointsLayer);
+	stage.add(commentsLayer);
+
+
+	//Point
+	function CreatePoint(event) {
+		event.preventDefault(); 
+	    form = event.currentTarget;
+
+	    let CreatePointDto_model = new CreatePointDto(
+	    	510,	// default x_coord
+	    	165,	// default y_coord
+	    	25,		// Radius
+	    	"red"	// Color   
+	    );
+	    myClient.CreatePoint(CreatePointDto_model);
+	}
+
+	function UpdatePoint(event) {
+		event.preventDefault(); 
+	    form = event.currentTarget;
+
+	    i = form[0].value;
+	    i--;
+
+	    UpdatePointDto_model = new UpdatePointDto(
+	    	pointsLayer.children[i].attrs.guid,
+	    	pointsLayer.children[i].attrs.x,
+	    	pointsLayer.children[i].attrs.y,
+	    	form[2].value,
+	    	form[1].value
+	    );	
+	   myClient.UpdatePoint(UpdatePointDto_model);
+
+	   pointsLayer.children[i].children[0].attrs.fill = form[1].value;
+	   pointsLayer.children[i].children[0].attrs.radius = form[2].value;
+	   pointsLayer.draw();
+	}
+	
+
+	//Comment
+	function CreateComment(event) {
+		event.preventDefault(); 
+	    form = event.currentTarget;	
+
+	    i = form[0].value;
+	    i--;
+
+	    guid = pointsLayer.children[i].children[0].attrs.guid;    
+
+	    let CreateCommentDto_model = new CreateCommentDto(
+	    	guid, 	// pointID
+	    	form[1].value, 	// text
+	    	form[2].value	// backgroundColor	
+	    );		   
+
+	   myClient.CreateComment(CreateCommentDto_model);
+	}
+
+	function UpdateComment(event) {
+		event.preventDefault(); 
+	    form = event.currentTarget;
+
+	    i = form[0].value;
+	    let tmp = commentsLayer.children.find(o => o.attrs.id == i);	   
+
+	    UpdateCommentDto_model = new UpdateCommentDto(
+	    	tmp.attrs.guid,
+	    	tmp.attrs.PointID,
+	    	form[1].value,	    	
+	    	form[2].value
+	    ); 
+
+	    myClient.UpdateComment(UpdateCommentDto_model);  
+	    
+	    commentsLayer.children[tmp.index].children[1].textArr[0].text = form[1].value;
+	    commentsLayer.children[tmp.index].children[0].attrs.fill = form[2].value;
+	  	commentsLayer.draw();
+	}
+	
+function getData(){
+	data = myClient.GetAllPoints();
+	counter = 0;
+	
+}
+
+document.getElementById('pointCreate').addEventListener('submit', CreatePoint);
+document.getElementById('commentCreate').addEventListener('submit', CreateComment);
+document.getElementById('pointUpdate').addEventListener('submit', UpdatePoint);
+document.getElementById('commentUpdate').addEventListener('submit', UpdateComment);		
+</script>
+
+</body>
+</html>
