@@ -1,0 +1,12 @@
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Domain\bin\Debug\net6.0\Lasmart.Domain.deps.json
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Domain\bin\Debug\net6.0\Lasmart.Domain.dll
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Domain\bin\Debug\net6.0\Lasmart.Domain.pdb
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Domain\obj\Debug\net6.0\Lasmart.Domain.csproj.AssemblyReference.cache
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Domain\obj\Debug\net6.0\Lasmart.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Domain\obj\Debug\net6.0\Lasmart.Domain.AssemblyInfoInputs.cache
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Domain\obj\Debug\net6.0\Lasmart.Domain.AssemblyInfo.cs
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Domain\obj\Debug\net6.0\Lasmart.Domain.csproj.CoreCompileInputs.cache
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Domain\obj\Debug\net6.0\Lasmart.Domain.dll
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Domain\obj\Debug\net6.0\refint\Lasmart.Domain.dll
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Domain\obj\Debug\net6.0\Lasmart.Domain.pdb
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Domain\obj\Debug\net6.0\ref\Lasmart.Domain.dll

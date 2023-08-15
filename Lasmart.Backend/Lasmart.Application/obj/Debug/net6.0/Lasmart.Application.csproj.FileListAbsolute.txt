@@ -1,0 +1,15 @@
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Application\bin\Debug\net6.0\Lasmart.Application.deps.json
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Application\bin\Debug\net6.0\Lasmart.Application.dll
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Application\bin\Debug\net6.0\Lasmart.Application.pdb
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Application\bin\Debug\net6.0\Lasmart.Domain.dll
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Application\bin\Debug\net6.0\Lasmart.Domain.pdb
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Application\obj\Debug\net6.0\Lasmart.Application.csproj.AssemblyReference.cache
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Application\obj\Debug\net6.0\Lasmart.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Application\obj\Debug\net6.0\Lasmart.Application.AssemblyInfoInputs.cache
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Application\obj\Debug\net6.0\Lasmart.Application.AssemblyInfo.cs
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Application\obj\Debug\net6.0\Lasmart.Application.csproj.CoreCompileInputs.cache
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Application\obj\Debug\net6.0\Lasmart.Application.csproj.CopyComplete
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Application\obj\Debug\net6.0\Lasmart.Application.dll
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Application\obj\Debug\net6.0\refint\Lasmart.Application.dll
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Application\obj\Debug\net6.0\Lasmart.Application.pdb
+C:\Users\efim-\source\repos\Lasmart.Backend\Lasmart.Application\obj\Debug\net6.0\ref\Lasmart.Application.dll
