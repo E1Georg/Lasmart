@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "IgIcmPQcE9tOj9PJ7gSpK8dfVwnpJViv/xnJjEsBbFM=",
+  "Source": "Lasmart.WebApi",
+  "BasePath": "_content/Lasmart.WebApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
